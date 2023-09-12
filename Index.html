@@ -1,80 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Weekly Planning</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planning</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <Header>
-        <h1>Weekly Planning</h1>
-    </Header>
-    <section id="drag">
-        <div class="container">
-            <div class="search-box">
-                <input type="text" class="search-input" placeholder="Nom">
-                <input type="color" class="color-input" value="#ff69b4">
-                <button onclick="generateDiv()">Générer</button>
-            </div>
+    <div class="planning">
+        
+        <div class="time-header"></div>
+        <div class="days">
+            <!-- Ajoutez les cellules pour chaque jour -->
         </div>
+    </div>
+    <div>
+            <h1>Générateur de Div</h1>
     
-        <div class="result" id="result"></div>
-    
-        <script>
-            function generateDiv() {
-                const nom = document.querySelector('.search-input').value;
-                const couleur = document.querySelector('.color-input').value;
-                const resultDiv = document.getElementById('result');
-    
-                const div = document.createElement('div');
-                div.style.color = 'white';
-                div.style.backgroundColor = couleur;
-                div.style.padding = '10px';
-                div.style.borderRadius = '5px';
-                div.textContent = nom;
-    
-                const deleteButton = document.createElement('button');
-                deleteButton.classList.add('delete-button');
-                deleteButton.textContent = 'Supprimer';
-                deleteButton.onclick = function() {
-                    resultDiv.removeChild(div);
-                }
-    
-                div.appendChild(deleteButton);
-    
-                resultDiv.appendChild(div);
-            }
-        </script>
-    </section>
+    <label for="couleur">Couleur :</label>
+    <input type="color" id="couleur" value="#ffffff"><br><br>
 
-    <section id="planning">
-        <div class="parent">
-            <div class="div1"> Lundi</div>
-            <div class="div2"> Lundi</div>
-            <div class="div3">Lundi </div>
-            <div class="div4"> Lundi</div>
-            <div class="div5">Lundi </div>
-            <div class="div6">Lundi </div>
-            <div class="div7"> Lundi</div>
-            <div class="div8">6h </div>
-            <div class="div9">7h </div>
-            <div class="div10">8h </div>
-            <div class="div11">9h </div>
-            <div class="div12"> 10h</div>
-            <div class="div13">11h </div>
-            <div class="div14">12h </div>
-            <div class="div15"> 13h</div>
-            <div class="div16">14h </div>
-            <div class="div17"> 15h</div>
-            <div class="div18"> 16h</div>
-            <div class="div19"> 17h</div>
-            <div class="div20">18h </div>
-            <div class="div21"> 19h</div>
-            <div class="div22">20h </div>
-            <div class="div23"> 21h</div>
-            <div class="div24"> 22h</div>
-            </div>
-    </section>
+    <label for="contenu">Contenu :</label>
+    <input type="text" id="contenu"><br><br>
+
+    <button onclick="genererDiv()">Générer</button>
+    </div>
+
+    
+    <script src="script.js"></script>
 </body>
 </html>
